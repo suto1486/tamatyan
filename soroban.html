@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>そろばん入力</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body {
+      font-family: sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f5deb3;
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .soroban-wrapper {
+      position: relative;
+      width: 145px;
+      height: 304px;
+      margin-bottom: 1em;
+    }
+    .soroban-frame {
+      position: absolute;
+      top: 0; left: 0;
+      width: 145px;
+      height: 304px;
+      z-index: 1;
+    }
+    .space {
+      position: absolute;
+      width: 64px;
+      height: 40px;
+      z-index: 2;
+      transition: transform 0.01s ease, filter 0.01s;
+    }
+    .space:active {
+      transform: translateY(2px);
+      filter: brightness(0.9);
+    }
+    .space1 { top: 8px; left: 72px; }
+    .space2 { top: 48px; left: 72px; }
+    .space3 { top: 96px; left: 72px; }
+    .space4 { top: 136px; left: 72px; }
+    .space5 { top: 176px; left: 72px; }
+    .space6 { top: 216px; left: 72px; }
+    .space7 { top: 256px; left: 72px; }
+
+    .space8  { top: 8px; left: 8px; }
+    .space9  { top: 48px; left: 8px; }
+    .space10 { top: 96px; left: 8px; }
+    .space11 { top: 136px; left: 8px; }
+    .space12 { top: 176px; left: 8px; }
+    .space13 { top: 216px; left: 8px; }
+    .space14 { top: 256px; left: 8px; }
+
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <input type="number" id="numberInput" min="0" max="99" style="display: none;" />
+<p id="total" style="display: none;">現在の合計：0</p>
+
+    <div class="soroban-wrapper">
+      <img src="images/frame_correct.png" class="soroban-frame" alt="枠" />
+      <!-- unit5 -->
+      <img id="space1" src="images/bead_off.png" class="space space1" />
+      <img id="space2" src="images/bead_on.png" class="space space2" style="display: none;" />
+      <!-- unit1 -->
+      <img id="space3" src="images/bead_off.png" class="space space3" />
+      <img id="space4" src="images/bead_off.png" class="space space4" />
+      <img id="space5" src="images/bead_off.png" class="space space5" />
+      <img id="space6" src="images/bead_off.png" class="space space6" />
+      <img id="space7" src="images/bead_off.png" class="space space7" />
+      <!-- tens5 -->
+      <img id="space8" src="images/bead_off.png" class="space space8" />
+      <img id="space9" src="images/bead_on.png" class="space space9" style="display: none;" />
+      <!-- tens1 -->
+      <img id="space10" src="images/bead_off.png" class="space space10" />
+      <img id="space11" src="images/bead_off.png" class="space space11" />
+      <img id="space12" src="images/bead_off.png" class="space space12" />
+      <img id="space13" src="images/bead_off.png" class="space space13" />
+      <img id="space14" src="images/bead_off.png" class="space space14" />
+    </div>
+  </div>
+
+  <script>
+    const groups = {
+      unit5: ["space1", "space2"],
+      unit1: ["space3", "space4", "space5", "space6", "space7"],
+      tens5: ["space8", "space9"],
+      tens1: ["space10", "space11", "space12", "space13", "space14"]
+    };
+
+    function showBead(id, state) {
+      const bead = document.getElementById(id);
+      bead.style.display = "inline";
+      bead.src = state === "on" ? "images/bead_on.png" : "images/bead_off.png";
+    }
+
+    function hideBead(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    function setGroupBeads(groupName, value) {
+      const group = groups[groupName];
+      for (let i = 0; i < 5; i++) {
+        const id = group[i];
+        if (i < value) {
+          showBead(id, "on");
+        } else if (i === value) {
+          hideBead(id); // 空白
+        } else {
+          showBead(id, "off");
+        }
+      }
+    }
+
+    function setBeadsFromInput(value) {
+      const tens = Math.floor(value / 10);
+      const ones = value % 10;
+
+      // unit5
+      if (ones >= 5) {
+        hideBead("space1");
+        showBead("space2", "on");
+      } else {
+        showBead("space1", "off");
+        hideBead("space2");
+      }
+
+      // tens5
+      if (tens >= 5) {
+        hideBead("space8");
+        showBead("space9", "on");
+      } else {
+        showBead("space8", "off");
+        hideBead("space9");
+      }
+
+      // unit1 / tens1
+      setGroupBeads("unit1", ones % 5);
+      setGroupBeads("tens1", tens % 5);
+
+      updateTotal();
+    }
+
+    function getStackedValue(groupName, multiplier = 1) {
+      const group = groups[groupName];
+      for (let i = 0; i < group.length; i++) {
+        const bead = document.getElementById(group[i]);
+        if (bead.style.display === "none") return i * multiplier;
+      }
+      return 0;
+    }
+
+    function getValue(groupName) {
+      if (groupName === "unit5") {
+        return document.getElementById("space2").style.display !== "none" ? 5 : 0;
+      }
+      if (groupName === "tens5") {
+        return document.getElementById("space9").style.display !== "none" ? 50 : 0;
+      }
+      if (groupName === "unit1") return getStackedValue("unit1", 1);
+      if (groupName === "tens1") return getStackedValue("tens1", 10);
+      return 0;
+    }
+
+    function updateTotal() {
+      const total = getValue("unit5") + getValue("unit1") + getValue("tens5") + getValue("tens1");
+      document.getElementById("total").innerText = `現在の合計：${total}`;
+  document.getElementById("numberInput").value = total; // ←ここを追加！
+    }
+
+
+function setEnabledSpaces(validIds) {
+  const all = [].concat(...Object.values(groups));
+  all.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.pointerEvents = validIds.includes(id) ? "auto" : "none";
+    }
+  });
+}
+window.setEnabledSpaces = setEnabledSpaces;
+
+
+function reset() {
+  setBeadsFromInput(0);
+}
+window.reset = reset;
+
+
+
+
+
+
+
+    // 入力イベント
+    document.getElementById("numberInput").addEventListener("input", () => {
+      const val = parseInt(document.getElementById("numberInput").value, 10);
+      if (!isNaN(val) && val >= 0 && val <= 99) {
+        setBeadsFromInput(val);
+      } else if (document.getElementById("numberInput").value === "") {
+        setBeadsFromInput(0);
+      }
+    });
+
+    // タップイベント
+    for (const [groupName, ids] of Object.entries(groups)) {
+      ids.forEach((id, index) => {
+        document.getElementById(id).addEventListener("click", () => {
+          if (groupName === "unit5" || groupName === "tens5") {
+            const [offId, onId] = ids;
+            if (id === offId) {
+              hideBead(offId);
+              showBead(onId, "on");
+            } else {
+              hideBead(onId);
+              showBead(offId, "off");
+            }
+          } else {
+            // unit1, tens1 のロジック：indexまでがON、その次が空白、下がOFF
+            ids.forEach((bid, i) => {
+              if (i < index) showBead(bid, "on");
+              else if (i === index) hideBead(bid);
+              else showBead(bid, "off");
+            });
+          }
+          updateTotal();
+
+if (clickHandler) clickHandler(id);  // ←これを追加
+        });
+      });
+    }
+
+
+
+    setBeadsFromInput(0); // 初期表示
+
+
+let clickHandler = null;
+
+function registerClickHandler(handler) {
+  clickHandler = handler;
+}
+
+window.setBeadsFromInput = setBeadsFromInput;
+window.setEnabledSpaces = setEnabledSpaces;
+window.reset = reset;
+window.registerClickHandler = registerClickHandler;
+
+  </script>
+</body>
+</html>
