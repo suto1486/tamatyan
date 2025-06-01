@@ -1,0 +1,112 @@
+[
+  {
+    "id": "5-1",
+    "text1": "たす1は？",
+    "text2": "",
+    "text3": "",
+    "number": 4,
+    "answers": [
+      "space1",
+      "space3"
+    ]
+  },
+  {
+    "id": "5-2",
+    "text1": "たす2は？",
+    "text2": "",
+    "text3": "",
+    "number": 4,
+    "answers": [
+      "space1",
+      "space4"
+    ]
+  },
+  {
+    "id": "5-3",
+    "text1": "たす2は？",
+    "text2": "",
+    "text3": "",
+    "number": 3,
+    "answers": [
+      "space1",
+      "space3"
+    ]
+  },
+  {
+    "id": "5-4",
+    "text1": "たす3は？",
+    "text2": "",
+    "text3": "",
+    "number": 4,
+    "answers": [
+      "space1",
+      "space5"
+    ]
+  },
+  {
+    "id": "5-5",
+    "text1": "たす3は？",
+    "text2": "",
+    "text3": "",
+    "number": 3,
+    "answers": [
+      "space1",
+      "space4"
+    ]
+  },
+  {
+    "id": "5-6",
+    "text1": "たす3は？",
+    "text2": "",
+    "text3": "",
+    "number": 2,
+    "answers": [
+      "space1",
+      "space3"
+    ]
+  },
+  {
+    "id": "5-7",
+    "text1": "たす4は？",
+    "text2": "",
+    "text3": "",
+    "number": 4,
+    "answers": [
+      "space1",
+      "space6"
+    ]
+  },
+  {
+    "id": "5-8",
+    "text1": "たす4は？",
+    "text2": "",
+    "text3": "",
+    "number": 3,
+    "answers": [
+      "space1",
+      "space5"
+    ]
+  },
+  {
+    "id": "5-9",
+    "text1": "たす4は？",
+    "text2": "",
+    "text3": "",
+    "number": 2,
+    "answers": [
+      "space1",
+      "space4"
+    ]
+  },
+  {
+    "id": "5-10",
+    "text1": "たす4は？",
+    "text2": "",
+    "text3": "",
+    "number": 1,
+    "answers": [
+      "space1",
+      "space3"
+    ]
+  }
+]
