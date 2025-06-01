@@ -1,0 +1,122 @@
+[
+  {
+    "id": "10-1a-1",
+    "text1": "たす1は？",
+    "text2": "9をひいて10をたす",
+    "text3": "",
+    "number": 9,
+    "answers": [
+      "space3",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "10-1a-2",
+    "text1": "たす2は？",
+    "text2": "8をひいて10をたす",
+    "text3": "",
+    "number": 9,
+    "answers": [
+      "space4",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "10-1a-3",
+    "text1": "たす2は？",
+    "text2": "8をひいて10をたす",
+    "text3": "",
+    "number": 8,
+    "answers": [
+      "space3",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "10-1a-4",
+    "text1": "たす3は？",
+    "text2": "7をひいて10をたす",
+    "text3": "",
+    "number": 9,
+    "answers": [
+      "space5",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "10-1a-5",
+    "text1": "たす3は？",
+    "text2": "7をひいて10をたす",
+    "text3": "",
+    "number": 8,
+    "answers": [
+      "space4",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "10-1a-6",
+    "text1": "たす3は？",
+    "text2": "7をひいて10をたす",
+    "text3": "",
+    "number": 7,
+    "answers": [
+      "space3",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "10-1a-7",
+    "text1": "たす4は？",
+    "text2": "6をひいて10をたす",
+    "text3": "",
+    "number": 9,
+    "answers": [
+      "space6",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "10-1a-8",
+    "text1": "たす4は？",
+    "text2": "6をひいて10をたす",
+    "text3": "",
+    "number": 8,
+    "answers": [
+      "space5",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "10-1a-9",
+    "text1": "たす4は？",
+    "text2": "6をひいて10をたす",
+    "text3": "",
+    "number": 7,
+    "answers": [
+      "space4",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "10-1a-10",
+    "text1": "たす4は？",
+    "text2": "6をひいて10をたす",
+    "text3": "",
+    "number": 6,
+    "answers": [
+      "space3",
+      "space2",
+      "space11"
+    ]
+  }
+]

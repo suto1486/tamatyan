@@ -1,0 +1,122 @@
+[
+  {
+    "id": "spa-1",
+    "text1": "たす6は？",
+    "text2": "4をひいて10をたす",
+    "text3": "1をたして5をひいて10をたす",
+    "number": 5,
+    "answers": [
+      "space3",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "spa-2",
+    "text1": "たす6は？",
+    "text2": "4をひいて10をたす",
+    "text3": "1をたして5をひいて10をたす",
+    "number": 6,
+    "answers": [
+      "space4",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "spa-3",
+    "text1": "たす6は？",
+    "text2": "4をひいて10をたす",
+    "text3": "1をたして5をひいて10をたす",
+    "number": 7,
+    "answers": [
+      "space5",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "spa-4",
+    "text1": "たす6は？",
+    "text2": "4をひいて10をたす",
+    "text3": "1をたして5をひいて10をたす",
+    "number": 8,
+    "answers": [
+      "space6",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "spa-5",
+    "text1": "たす7は？",
+    "text2": "3をひいて10をたす",
+    "text3": "2をたして5をひいて10をたす",
+    "number": 5,
+    "answers": [
+      "space4",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "spa-6",
+    "text1": "たす7は？",
+    "text2": "3をひいて10をたす",
+    "text3": "2をたして5をひいて10をたす",
+    "number": 6,
+    "answers": [
+      "space5",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "spa-7",
+    "text1": "たす7は？",
+    "text2": "3をひいて10をたす",
+    "text3": "2をたして5をひいて10をたす",
+    "number": 7,
+    "answers": [
+      "space6",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "spa-8",
+    "text1": "たす8は？",
+    "text2": "2をひいて10をたす",
+    "text3": "3をたして5をひいて10をたす",
+    "number": 5,
+    "answers": [
+      "space5",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "spa-9",
+    "text1": "たす8は？",
+    "text2": "2をひいて10をたす",
+    "text3": "3をたして5をひいて10をたす",
+    "number": 6,
+    "answers": [
+      "space6",
+      "space2",
+      "space11"
+    ]
+  },
+  {
+    "id": "spa-10",
+    "text1": "たす9は？",
+    "text2": "1をひいて10をたす",
+    "text3": "4をたして5をひいて10をたす",
+    "number": 5,
+    "answers": [
+      "space7",
+      "space2",
+      "space11"
+    ]
+  }
+]
