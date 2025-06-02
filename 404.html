@@ -2,10 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      // GitHub Pagesでのリロード問題を防ぐ
+      const redirectTo = location.pathname.replace(/^\/tamatyan/, '');
+      location.replace('/tamatyan/#' + redirectTo + location.search + location.hash);
+    </script>
     <title>Redirecting...</title>
   </head>
   <body>
-    <p>Redirecting to top page...</p>
+    <p>Redirecting to application...</p>
   </body>
 </html>
