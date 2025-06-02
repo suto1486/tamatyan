@@ -6,7 +6,7 @@
     "text3": "1をたして5をひいて10をたす",
     "number": 5,
     "answers": [
-      "space3",
+      "space4",
       "space2",
       "space11"
     ]
@@ -18,7 +18,7 @@
     "text3": "1をたして5をひいて10をたす",
     "number": 6,
     "answers": [
-      "space4",
+      "space5",
       "space2",
       "space11"
     ]
@@ -30,7 +30,7 @@
     "text3": "1をたして5をひいて10をたす",
     "number": 7,
     "answers": [
-      "space5",
+      "space6",
       "space2",
       "space11"
     ]
@@ -42,7 +42,7 @@
     "text3": "1をたして5をひいて10をたす",
     "number": 8,
     "answers": [
-      "space6",
+      "space7",
       "space2",
       "space11"
     ]
@@ -54,7 +54,7 @@
     "text3": "2をたして5をひいて10をたす",
     "number": 5,
     "answers": [
-      "space4",
+      "space5",
       "space2",
       "space11"
     ]
@@ -66,7 +66,7 @@
     "text3": "2をたして5をひいて10をたす",
     "number": 6,
     "answers": [
-      "space5",
+      "space6",
       "space2",
       "space11"
     ]
@@ -78,7 +78,7 @@
     "text3": "2をたして5をひいて10をたす",
     "number": 7,
     "answers": [
-      "space6",
+      "space7",
       "space2",
       "space11"
     ]
@@ -90,7 +90,7 @@
     "text3": "3をたして5をひいて10をたす",
     "number": 5,
     "answers": [
-      "space5",
+      "space6",
       "space2",
       "space11"
     ]
@@ -102,7 +102,7 @@
     "text3": "3をたして5をひいて10をたす",
     "number": 6,
     "answers": [
-      "space6",
+      "space7",
       "space2",
       "space11"
     ]

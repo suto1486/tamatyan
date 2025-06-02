@@ -62,7 +62,7 @@
   {
     "id": "sps-6",
     "text1": "ひく7は？",
-    "text2": "10をひいて4をたす",
+    "text2": "10をひいて3をたす",
     "text3": "10をひいて5をたして2をひく",
     "number": 13,
     "answers": [
@@ -74,7 +74,7 @@
   {
     "id": "sps-7",
     "text1": "ひく7は？",
-    "text2": "10をひいて5をたす",
+    "text2": "10をひいて3をたす",
     "text3": "10をひいて5をたして2をひく",
     "number": 12,
     "answers": [
@@ -183,7 +183,7 @@
     "answers": [
       "space10",
       "space1",
-      "space8"
+      "space6"
     ]
   },
   {
@@ -195,7 +195,7 @@
     "answers": [
       "space10",
       "space1",
-      "space7"
+      "space5"
     ]
   },
   {
@@ -207,7 +207,7 @@
     "answers": [
       "space10",
       "space1",
-      "space7"
+      "space6"
     ]
   },
   {
@@ -219,7 +219,7 @@
     "answers": [
       "space10",
       "space1",
-      "space8"
+      "space7"
     ]
   },
   {
