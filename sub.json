@@ -1,0 +1,96 @@
+[
+  {
+    "id": "sub-1",
+    "text1": "ひく1はひとさしゆびで",
+    "text2": "1こさげる",
+    "text3": "",
+    "number": 1,
+    "answers": [
+      "space3"
+    ]
+  },
+  {
+    "id": "sub-2",
+    "text1": "ひく2はひとさしゆびで",
+    "text2": "2こさげる",
+    "text3": "",
+    "number": 2,
+    "answers": [
+      "space3"    
+    ]
+  },
+  {
+    "id": "sub-3",
+    "text1": "ひく3はひとさしゆびで",
+    "text2": "3こさげる",
+    "text3": "",
+    "number": 3,
+    "answers": [
+      "space3"    
+    ]
+  },
+  {
+    "id": "sub-4",
+    "text1": "ひく4はひとさしゆびで",
+    "text2": "4こさげる",
+    "text3": "",
+    "number": 4,
+    "answers": [
+      "space3"    
+    ]
+  },
+  {
+    "id": "sub-5",
+    "text1": "ひく5はひとさしゆびで",
+    "text2": "5だまをあげる",
+    "text3": "",
+    "number": 5,
+    "answers": [
+      "space2"    
+    ]
+  },
+  {
+    "id": "sub-6",
+    "text1": "ひく6はひとさしゆびで",
+    "text2": "1さげる,5をあげる",
+    "text3": "",
+    "number": 6,
+    "answers": [
+      "space3" ,   
+      "space2"
+    ]
+  },
+  {
+    "id": "sub-7",
+    "text1": "ひく7はひとさしゆびで",
+    "text2": "2さげる,5をあげる",
+    "text3": "",
+    "number": 7,
+    "answers": [
+      "space3" ,   
+      "space2"
+    ]
+  },
+  {
+    "id": "sub-8",
+    "text1": "ひく8はひとさしゆびで",
+    "text2": "3さげる,5をあげる",
+    "text3": "",
+    "number": 8,
+    "answers": [
+      "space3" ,   
+      "space2"
+    ]
+  },
+  {
+    "id": "sub-9",
+    "text1": "ひく9はひとさしゆびで",
+    "text2": "4さげる,5をあげる",
+    "text3": "",
+    "number": 9,
+    "answers": [
+      "space3" ,   
+      "space2"
+    ]
+  }
+]
