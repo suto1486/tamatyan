@@ -1,0 +1,105 @@
+[
+  {
+    "id": "add-1",
+    "text1": "たす1は？",
+    "text2": "おやゆびで1こあげる",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space4"
+    ]
+  },
+  {
+    "id": "add-2",
+    "text1": "たす2は？",
+    "text2": "おやゆびで2こあげる",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space5"    
+    ]
+  },
+  {
+    "id": "add-3",
+    "text1": "たす3は？",
+    "text2": "おやゆびで3こあげる",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space6"    
+    ]
+  },
+    {
+      "id": "add-4",
+      "text1": "たす4は？",
+      "text2": "おやゆびで4こあげる",
+      "text3": "",
+      "number": 0,
+      "answers": [
+        "space7"    
+      ]
+
+
+    },
+
+  {
+    "id": "add-5",
+    "text1": "たす5は？",
+    "text2": "ひとさしゆびうえのたまをさげる",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space1"    
+    ]
+
+  },
+
+  {
+    "id": "add-6",
+    "text1": "たす6は？",
+    "text2": "5と1",
+    "text3": "おやゆび、ひとさしゆびではさむ",
+    "number": 0,
+    "answers": [
+      "space1'",
+      "space4'"  
+    ]
+
+  },
+  {
+    "id": "add-7",
+    "text1": "たす7は？",
+    "text2": "5と2",
+    "text3": "おやゆび、ひとさしゆびではさむ",
+    "number": 0,
+    "answers": [
+      "space1'",
+      "space5'"  
+    ]
+
+  },
+  {
+    "id": "add-8",
+    "text1": "たす8は？",
+    "text2": "5と3",
+    "text3": "おやゆび、ひとさしゆびではさむ",
+    "number": 0,
+    "answers": [
+      "space1'",
+      "space6'"  
+    ]
+
+  },
+  {
+    "id": "add-9",
+    "text1": "たす9は？",
+    "text2": "5と4",
+    "text3": "おやゆび、ひとさしゆびではさむ",
+    "number": 0,
+    "answers": [
+      "space1'",
+      "space7'"  
+    ]
+
+  }
+]
