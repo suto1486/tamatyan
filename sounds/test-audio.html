@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>音声テスト</title>
+</head>
+<body style="background-color:#eef; font-family:sans-serif; text-align:center; padding:50px;">
+  <h1>音声再生テスト</h1>
+  <button id="playBtn" style="font-size:1.2em; padding:10px 20px;">音を鳴らす</button>
+  <p>※ファイル <code>clear.mp3</code> を同じフォルダに置いてください。</p>
+
+  <script>
+    const btn = document.getElementById('playBtn');
+    const audio = new Audio('clear.mp3');
+
+    btn.addEventListener('click', () => {
+      audio.currentTime = 0;
+      audio.play().catch(err => {
+        alert('再生エラー: ' + err.message);
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+</html>
