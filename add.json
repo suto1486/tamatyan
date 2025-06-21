@@ -2,7 +2,7 @@
   {
     "id": "add-1",
     "text1": "1は？",
-    "text2": "したのたまが1こ",
+    "text2": "1はしたのたまが1こ",
     "text3": "",
     "number": 0,
     "answers": [
@@ -12,7 +12,7 @@
   {
     "id": "add-2",
     "text1": "2は？",
-    "text2": "したのたまが2こ",
+    "text2": "2はしたのたまが2こ",
     "text3": "",
     "number": 0,
     "answers": [
@@ -22,7 +22,7 @@
   {
     "id": "add-3",
     "text1": "3は？",
-    "text2": "したのたまが3こ",
+    "text2": "3はしたのたまが3こ",
     "text3": "",
     "number": 0,
     "answers": [
@@ -32,7 +32,7 @@
     {
       "id": "add-4",
       "text1": "4は？",
-      "text2": "したのたまが4こ",
+      "text2": "4はしたのたまが4こ",
       "text3": "",
       "number": 0,
       "answers": [
@@ -45,7 +45,7 @@
   {
     "id": "add-5",
     "text1": "5は？",
-    "text2": "うえのたま",
+    "text2": "5はうえのたま",
     "text3": "",
     "number": 0,
     "answers": [
@@ -57,7 +57,7 @@
   {
     "id": "add-6",
     "text1": "6は？",
-    "text2": "5と1",
+    "text2": "6は5と1",
     "text3": "",
     "number": 0,
     "answers": [
@@ -69,7 +69,7 @@
   {
     "id": "add-7",
     "text1": "7は？",
-    "text2": "5と2",
+    "text2": "7は5と2",
     "text3": "",
     "number": 0,
     "answers": [
@@ -81,7 +81,7 @@
   {
     "id": "add-8",
     "text1": "8は？",
-    "text2": "5と3",
+    "text2": "8は5と3",
     "text3": "",
     "number": 0,
     "answers": [
@@ -93,7 +93,7 @@
   {
     "id": "add-9",
     "text1": "9は？",
-    "text2": "5と4",
+    "text2": "9は5と4",
     "text3": "",
     "number": 0,
     "answers": [

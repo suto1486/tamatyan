@@ -1,0 +1,234 @@
+[
+    {
+        "id": "1_4-1",
+        "text1": "たす1は？",
+        "text2": "たす1は5をたして4をひく",
+        "text3": "",
+        "number": 4,
+        "answers": [
+          "space1",
+          "space3"
+        ]
+      },
+      {
+        "id": "1_4-2",
+        "text1": "たす2は？",
+        "text2": "たす2は5をたして3をひく",
+        "text3": "",
+        "number": 4,
+        "answers": [
+          "space1",
+          "space4"
+        ]
+      },
+      {
+        "id": "1_4-3",
+        "text1": "たす2は？",
+        "text2": "たす2は5をたして3をひく",
+        "text3": "",
+        "number": 3,
+        "answers": [
+          "space1",
+          "space3"
+        ]
+      },
+      {
+        "id": "1_4-4",
+        "text1": "たす3は？",
+        "text2": "たす3は5をたして2をひく",
+        "text3": "",
+        "number": 4,
+        "answers": [
+          "space1",
+          "space5"
+        ]
+      },
+      {
+        "id": "1_4-5",
+        "text1": "たす3は？",
+        "text2": "たす3は5をたして2をひく",
+        "text3": "",
+        "number": 3,
+        "answers": [
+          "space1",
+          "space4"
+        ]
+      },
+      {
+        "id": "1_4-6",
+        "text1": "たす3は？",
+        "text2": "たす3は5をたして2をひく",
+        "text3": "",
+        "number": 2,
+        "answers": [
+          "space1",
+          "space3"
+        ]
+      },
+      {
+        "id": "1_4-7",
+        "text1": "たす4は？",
+        "text2": "たす4は5をたして1をひく",
+        "text3": "",
+        "number": 4,
+        "answers": [
+          "space1",
+          "space6"
+        ]
+      },
+      {
+        "id": "1_4-8",
+        "text1": "たす4は？",
+        "text2": "たす4は5をたして1をひく",
+        "text3": "",
+        "number": 3,
+        "answers": [
+          "space1",
+          "space5"
+        ]
+      },
+      {
+        "id": "1_4-9",
+        "text1": "たす4は？",
+        "text2": "たす4は5をたして1をひく",
+        "text3": "",
+        "number": 2,
+        "answers": [
+          "space1",
+          "space4"
+        ]
+      },
+      {
+        "id": "1_4-10",
+        "text1": "たす4は？",
+        "text2": "たす4は5をたして1をひく",
+        "text3": "",
+        "number": 1,
+        "answers": [
+          "space1",
+          "space3"
+        ]
+      },
+
+      {
+      "id": "1_4-11",
+      "text1": "たす1は？",
+      "text2": "たす1は9をひいて10をたす",
+      "text3": "",
+      "number": 9,
+      "answers": [
+        "space3",
+        "space2",
+        "space11"
+      ]
+      },
+    {
+      "id": "1_4-12",
+      "text1": "たす2は？",
+      "text2": "たす2は8をひいて10をたす",
+      "text3": "",
+      "number": 9,
+      "answers": [
+        "space4",
+        "space2",
+        "space11"
+      ]
+    },
+    {
+      "id": "1_4-13",
+      "text1": "たす2は？",
+      "text2": "たす2は8をひいて10をたす",
+      "text3": "",
+      "number": 8,
+      "answers": [
+        "space3",
+        "space2",
+        "space11"
+      ]
+    },
+    {
+      "id": "1_4-14",
+      "text1": "たす3は？",
+      "text2": "たす3は7をひいて10をたす",
+      "text3": "",
+      "number": 9,
+      "answers": [
+        "space5",
+        "space2",
+        "space11"
+      ]
+    },
+    {
+      "id": "1_4-15",
+      "text1": "たす3は？",
+      "text2": "たす3は7をひいて10をたす",
+      "text3": "",
+      "number": 8,
+      "answers": [
+        "space4",
+        "space2",
+        "space11"
+      ]
+    },
+    {
+      "id": "1_4-16",
+      "text1": "たす3は？",
+      "text2": "たす3は7をひいて10をたす",
+      "text3": "",
+      "number": 7,
+      "answers": [
+        "space3",
+        "space2",
+        "space11"
+      ]
+    },
+    {
+      "id": "1_4-17",
+      "text1": "たす4は？",
+      "text2": "たす4は6をひいて10をたす",
+      "text3": "",
+      "number": 9,
+      "answers": [
+        "space6",
+        "space2",
+        "space11"
+      ]
+    },
+    {
+      "id": "1_4-18",
+      "text1": "たす4は？",
+      "text2": "たす4は6をひいて10をたす",
+      "text3": "",
+      "number": 8,
+      "answers": [
+        "space5",
+        "space2",
+        "space11"
+      ]
+    },
+    {
+      "id": "1_4-19",
+      "text1": "たす4は？",
+      "text2": "たす4は6をひいて10をたす",
+      "text3": "",
+      "number": 7,
+      "answers": [
+        "space4",
+        "space2",
+        "space11"
+      ]
+    },
+    {
+      "id": "1_4-20",
+      "text1": "たす4は？",
+      "text2": "たす4は6をひいて10をたす",
+      "text3": "",
+      "number": 6,
+      "answers": [
+        "space3",
+        "space2",
+        "space11"
+      ]
+    }
+  ]
+
