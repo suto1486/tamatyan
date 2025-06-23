@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom'; // ← 追加（クエリ取得用）
+import { useLocation, useNavigate } from 'react-router-dom';
+import SorobanUI from '../SorobanUI';
 
 type Problem = {
   number: number;
@@ -13,447 +14,324 @@ function Practice() {
   const [problems, setProblems] = useState<Problem[]>([]);
   const [currentProblem, setCurrentProblem] = useState<Problem | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [title, setTitle] = useState('そろばん'); // ← ヘッダー表示用
+  const [title, setTitle] = useState('そろばん');
+  const [loading, setLoading] = useState(true);
+  const [unit5On, setUnit5On] = useState(false);
+  const [tens5On, setTens5On] = useState(false);
+  const [tens100On, setTens100On] = useState(false);
+  const [unit100Index, setUnit100Index] = useState(0);
+  const [unit1Index, setUnit1Index] = useState(0);
+  const [tens1Index, setTens1Index] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [pendingSimultaneous, setPendingSimultaneous] = useState<string[]>([]);
+  const [isFinished, setIsFinished] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
+  
+  const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const hideText = params.get('hide') === '1';
-  
 
-  const [currentStep, setCurrentStep] = useState(0);
-const [isFinished, setIsFinished] = useState(false);
-const [correctCount, setCorrectCount] = useState(0);
-const [unit5On, setUnit5On] = useState(false);
-const [tens5On, setTens5On] = useState(false);
-const [unit1Index, setUnit1Index] = useState(0);
-const [tens1Index, setTens1Index] = useState(0);
+  const sorobanWrapperStyle = isFinished
+    ? { pointerEvents: 'none' as const, opacity: 1 }
+    : {};
 
-
-
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const file = params.get('file') || 'problems_5_add.json'; // ← デフォルトファイル名
-    const titleParam = params.get('title') || 'そろばん';       // ← デフォルトタイトル
-
-    setTitle(titleParam); // ← ヘッダーに使う
-    
-    fetch(`${import.meta.env.BASE_URL}${file}`)
-      .then(res => res.json())
-      .then((data: Problem[]) => {
-        const shuffled = [...data];
-        for (let i = shuffled.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        setProblems(shuffled);
-        setCurrentProblem(shuffled[0]);
-      })
-      .catch(err => console.error("読み込みエラー", err));
-  }, [location.search]);
-
-  
-
-  useEffect(() => {
-    if (!currentProblem) return;
-    const num = currentProblem.number;
+  const applyNumberToSoroban = (num: number) => {
     const units = num % 10;
-    const tens = Math.floor(num / 10);
-  
+    const tens = Math.floor(num / 10) % 10;
+    const hundreds = Math.floor(num / 100);
     setUnit5On(units >= 5);
     setUnit1Index(units >= 5 ? units - 5 : units);
     setTens5On(tens >= 5);
     setTens1Index(tens >= 5 ? tens - 5 : tens);
-  }, [currentProblem]);
+    setTens100On(hundreds >= 5);
+    setUnit100Index(hundreds >= 5 ? hundreds - 5 : hundreds);
+  };
+
   
+  const [audioClear, setAudioClear] = useState<HTMLAudioElement | null>(null);
+  const [audioCorrect, setAudioCorrect] = useState<HTMLAudioElement | null>(null);
+
+useEffect(() => {
+  const correct = new Audio(`${import.meta.env.BASE_URL}sounds/correct.mp3`);
+  const clear = new Audio(`${import.meta.env.BASE_URL}sounds/clear.mp3`);
+  correct.load();
+  clear.load();
+  setAudioCorrect(correct);
+  setAudioClear(clear);
+}, []);
+
+
+
+
+
+
+
+const playSound = (audio: HTMLAudioElement | null, label: string) => {
+  if (audio) {
+    audio.currentTime = 0;
+    audio.play()
+      .then(() => console.log(`${label} 再生 OK`))
+      .catch((e) => console.warn(`${label} 再生失敗`, e));
+  }
+};
+
 
   useEffect(() => {
-   // 🔧 修正前（NG: 範囲外でも代入される可能性）
-if (problems.length > 0) {
-  setCurrentProblem(problems[currentIndex]);
-}
+    const file = params.get('file') || 'problems_5_add.json';
+    const titleParam = params.get('title') || 'そろばん';
+    setTitle(titleParam);
 
-// ✅ 修正後（OK: 範囲外防止）
-if (problems.length > 0 && currentIndex < problems.length) {
-  setCurrentProblem(problems[currentIndex]);
-}
+    const url = `${import.meta.env.BASE_URL}${file}?t=${Date.now()}`;
+    setLoading(true);
 
+    fetch(url)
+      .then(res => res.json())
+      .then((data: Problem[]) => {
+        const fixed = data.map(p => ({
+          ...p,
+          text2: p.text2 ?? '\u00A0',
+          text3: p.text3 ?? '\u00A0',
+        }));
+        for (let i = fixed.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [fixed[i], fixed[j]] = [fixed[j], fixed[i]];
+        }
+        setProblems(fixed);
+        setCurrentProblem(fixed[0]);
+      })
+      .catch(e => console.error("読み込みエラー:", e))
+      .finally(() => setLoading(false));
+  }, [location.search]);
+
+  const yuruMode = params.get('yuru') === '1'; // ← クエリから取得
+
+  useEffect(() => {
+    if (currentProblem) {
+      applyNumberToSoroban(currentProblem.number);
+    }
+  }, [currentProblem]);
+
+  useEffect(() => {
+    if (problems.length > 0 && currentIndex < problems.length) {
+      setCurrentProblem(problems[currentIndex]);
+    }
   }, [currentIndex, problems]);
-  
 
-  const handleUnit1Click = (index: number) => setUnit1Index(index);
-  const handleTens1Click = (index: number) => setTens1Index(index);
-
-  const handleSpaceClick = (clickedId: string) => {
-    if (!currentProblem || !currentProblem.answers) return;
-  
-    const expectedId = currentProblem.answers[currentStep]?.trim();
-    const clicked = clickedId.trim();
-  
-    if (clicked === expectedId) {
-      const nextStep = currentStep + 1;
-  
-     if (nextStep >= currentProblem.answers.length) {
-  setCorrectCount((prev) => prev + 1);
-
-  setTimeout(() => {
-    const nextIndex = currentIndex + 1;
-    if (nextIndex < problems.length) {
-      setCurrentIndex(nextIndex);
-      setCurrentStep(0);
-    } else {
-      setIsFinished(true); 
-      setCurrentProblem({
-        number: 0,
-        text1: '',
-        text2: '',
-        text3: '',
-        answers: [] // ← これでクリック判定を無効化
-      });
+  const resetProblem = () => {
+    setCurrentIndex(0);
+    setCurrentStep(0);
+    setIsFinished(false);
+    setCorrectCount(0);
+    setPendingSimultaneous([]);
+    if (problems.length > 0) {
+      const first = problems[0];
+      setCurrentProblem(first);
+      applyNumberToSoroban(first.number);
     }
-  }, 800);
-}
+  };
 
-        else {
-        // 次のステップへ進む（音は鳴らさない）
-        setCurrentStep(nextStep);
+  const failOrReset = () => {
+    const lowerTitle = title.trim().toLowerCase();
+    const isTashikata = lowerTitle.includes('たしかた');
+    const isYuruyuru = params.get('yuru') === '1'; // ← yuru=1 のときだけ「ゆるゆるモード」
+  
+    if (isTashikata) {
+      // 「たしかた」のときは間違えても何もしない
+      return;
+    }
+  
+    if (!isYuruyuru) {
+      alert('まちがいです（きびしいモード）');
+      resetProblem();
+    } else {
+      alert('まちがいです（ゆるゆるモード）');
+      if (currentProblem) {
+        applyNumberToSoroban(currentProblem.number);
       }
-  
-
-
-    } else {
-      // ❌ 間違い → リセット
-      setTimeout(() => {
-        alert("まちがいです");
-        window.location.reload();
-      }, 100);
+      setCurrentStep(0);
+      setPendingSimultaneous([]);
     }
-
   };
   
-
-
-  return (
-   <div style={{
-  backgroundColor: '#0000cc',
-  height: '100vh',
-  width: '100vw',
-  overflow: 'hidden',
-  fontFamily: 'sans-serif'
-}}>
-{isFinished && (
-  <div
-    style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100vw',
-      height: '100vh',
-      backgroundColor: 'transparent',
-      zIndex: 999,
-      pointerEvents: 'auto'
-    }}
-    onClick={(e) => {
-      e.stopPropagation();
-      e.preventDefault();
-    }}
-  />
-)}
-
-      {/* ヘッダー */}
-      <div style={{
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '50px',
-  backgroundColor: '#0000cc',
-  color: 'yellow',
-  fontSize: '1.2rem',
-  fontWeight: 'bold',
-  textAlign: 'center',
-  lineHeight: '50px',
-  zIndex: 1000
-}}>
-  {title}
-</div>
-
-
-      {/* 本体 */}
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingTop: '60px'
-      }}>
-
-<div style={{ color: 'white', fontSize: '1.4rem', marginTop: '10px' }}>
-  {!isFinished
-    ? `あと ${problems.length - currentIndex} 問`
-    : 'ぜんぶできた！おめでとう！🎉'}
-</div>
-
-
-{currentProblem && (
-  <>
-    {/* text1 は常に表示 */}
-    <h2 style={{
-      fontSize: '1.6rem',
-      color: 'yellow',
-      minHeight: '1.5em',
-      margin: '0.5em'
-    }}>
-      {currentProblem.text1 || '\u00A0'}
-    </h2>
-
-    {/* text2/text3 は hideText に応じて非表示 */}
-    {!hideText && (
-      <>
-        <h2 style={{
-          fontSize: '1rem',
-          color: 'white',
-          minHeight: '1.5em',
-          margin: '0.5em'
-        }}>
-          {currentProblem.text2 || '\u00A0'}
-        </h2>
-
-        <h2 style={{
-          fontSize: '1rem',
-          color: 'white',
-          minHeight: '1.5em',
-          margin: '0.5em'
-        }}>
-          {currentProblem.text3 || '\u00A0'}
-        </h2>
-      </>
-    )}
-  </>
-)}
-
-
-
-
-
-        <div style={{
-          position: 'relative',
-          width: '145px',
-          height: '304px',
-          marginTop: '10px'
-        }}>
-          {/* 枠 */}
-          <img
-            src={`${import.meta.env.BASE_URL}images/frame_correct.png`}
-            alt="枠"
-            style={{
-              position: 'absolute', top: 0, left: 0,
-              width: '145px', height: '304px',
-              objectFit: 'none', zIndex: 1
-            }}
-          />
-
-          {/* tens5 */}
-          <img
-            src={`${import.meta.env.BASE_URL}images/${tens5On ? 'bead_on' : 'bead_off'}.png`}
-            alt="tens5"
-            style={{
-              position: 'absolute', top: tens5On ? '48px' : '8px', left: '8px',
-              width: '64px', height: '40px', cursor: 'pointer', zIndex: 2
-            }}
-            onClick={() => setTens5On(!tens5On)}
-          />
-
-          {/* unit5 */}
-          <img
-            src={`${import.meta.env.BASE_URL}images/${unit5On ? 'bead_on' : 'bead_off'}.png`}
-            alt="unit5"
-            style={{
-              position: 'absolute', top: unit5On ? '48px' : '8px', left: '72px',
-              width: '64px', height: '40px', cursor: 'pointer', zIndex: 2
-            }}
-            onClick={() => setUnit5On(!unit5On)}
-          />
-
-          {/* unit1 */}
-          {[0, 1, 2, 3, 4].map((i) => {
-            const top = 96 + i * 40;
-            if (i < unit1Index) {
-              return (
-                <img
-                  key={`unit1_on_${i}`}
-                  src={`${import.meta.env.BASE_URL}images/bead_on.png`}
-                  alt={`unit1_on_${i}`}
-                  style={{
-                    position: 'absolute', top: `${top}px`, left: '72px',
-                    width: '64px', height: '40px', cursor: 'pointer', zIndex: 2
-                  }}
-                  onClick={() => handleUnit1Click(i)}
-                />
-              );
-            } else if (i === unit1Index) {
-              return null;
-            } else {
-              return (
-                <img
-                  key={`unit1_off_${i}`}
-                  src={`${import.meta.env.BASE_URL}images/bead_off.png`}
-                  alt={`unit1_off_${i}`}
-                  style={{
-                    position: 'absolute', top: `${top}px`, left: '72px',
-                    width: '64px', height: '40px', cursor: 'pointer', zIndex: 2
-                  }}
-                  onClick={() => handleUnit1Click(i)}
-                />
-              );
-            }
-          })}
-
-          {/* tens1 */}
-          {[0, 1, 2, 3, 4].map((i) => {
-            const top = 96 + i * 40;
-            if (i < tens1Index) {
-              return (
-                <img
-                  key={`tens1_on_${i}`}
-                  src={`${import.meta.env.BASE_URL}images/bead_on.png`}
-                  alt={`tens1_on_${i}`}
-                  style={{
-                    position: 'absolute', top: `${top}px`, left: '8px',
-                    width: '64px', height: '40px', cursor: 'pointer', zIndex: 2
-                  }}
-                  onClick={() => handleTens1Click(i)}
-                />
-              );
-            } else if (i === tens1Index) {
-              return null;
-            } else {
-              return (
-                <img
-                  key={`tens1_off_${i}`}
-                  src={`${import.meta.env.BASE_URL}images/bead_off.png`}
-                  alt={`tens1_off_${i}`}
-                  style={{
-                    position: 'absolute', top: `${top}px`, left: '8px',
-                    width: '64px', height: '40px', cursor: 'pointer', zIndex: 2
-                  }}
-                  onClick={() => handleTens1Click(i)}
-                />
-              );
-            }
-          })}
-     {[
-  ["space1", 8, 72],
-  ["space2", 48, 72],
-  ["space3", 96, 72],
-  ["space4", 136, 72],
-  ["space5", 176, 72],
-  ["space6", 216, 72],
-  ["space7", 256, 72],
-  ["space8", 8, 8],
-  ["space9", 48, 8],
-  ["space10", 96, 8],
-  ["space11", 136, 8],
-  ["space12", 176, 8],
-  ["space13", 216, 8],
-  ["space14", 256, 8],
-].map(([id, top, left]) => {
-  const isEnabled = currentProblem?.answers.includes(id); // 正解だけクリック可能
-
-  return (
-    <div
-    key={id}
-    id={id}
-    style={{
-      position: 'absolute',
-      top: `${top}px`,
-      left: `${left}px`,
-      width: '64px',
-      height: '40px',
-      backgroundColor: 'transparent',
-      zIndex: 10,
-      cursor: 'pointer',
-      pointerEvents: 'auto'
-    }}
-    onClick={(e) => {
-      handleSpaceClick(id); // まず正解判定
   
-      // ↓ 一時的に pointerEvents を無効にして再度 click を送る
-      const el = e.currentTarget;
-      el.style.pointerEvents = 'none';
   
-      const below = document.elementFromPoint(e.clientX, e.clientY);
-      if (below && below !== el) {
-        (below as HTMLElement).click(); // 👈 珠にclickを渡す
+  
+  
+
+  const handleSpaceClick = (clickedId: string) => {
+    if (isFinished || !currentProblem) return;
+  
+    const rawAnswers = currentProblem.answers;
+    console.log("🧪 handleSpaceClick", { clickedId, currentStep, rawAnswers });
+  
+    // 順不同グループ構成
+    let group: string[] = [];
+    let i = currentStep;
+    while (i < rawAnswers.length) {
+      group.push(rawAnswers[i].replace("'", "").trim());
+      if (!rawAnswers[i].endsWith("'")) break;
+      i++;
+    }
+  
+    const expectedSet = new Set(group);
+  
+    // ✅ 共通正解処理
+    const handleCorrect = () => {
+      setCorrectCount(prev => prev + 1);
+      const nextIndex = currentIndex + 1;
+  
+      if (nextIndex < problems.length) {
+        playSound(audioCorrect, "✅ 正解音");
+      } else {
+        console.log("🎉 クリア音 直接再生");
+        if (audioClear) {
+          setTimeout(() => {
+            audioClear.currentTime = 0;
+            audioClear.play().catch((e) => console.warn("再生エラー", e));
+          }, 500); // ← この遅延で調整できます
+        }
       }
   
-      // pointerEvents を戻す（次のクリックに備える）
       setTimeout(() => {
-        el.style.pointerEvents = 'auto';
-      }, 0);
-    }}
- 
- 
-    />
-  );
-
+        if (nextIndex < problems.length) {
+          setCurrentIndex(nextIndex);
+          setCurrentStep(0);
+        } else {
+          setIsFinished(true);
+          setCurrentProblem({ number: 0, text1: '', text2: '', text3: '', answers: [] });
+        }
+      }, 1000);
+    };
   
-})}
+    // ⭐ 順不同タップ
+    if (group.length > 1) {
+      if (!expectedSet.has(clickedId)) {
+        setTimeout(() => failOrReset(), 10);
+        return;
+      }
+  
+      const updated = [...new Set([...pendingSimultaneous, clickedId])];
+      setPendingSimultaneous(updated);
+  
+      const currentSet = new Set(updated);
+      if ([...expectedSet].every(id => currentSet.has(id))) {
+        const nextStep = currentStep + group.length;
+        setCurrentStep(nextStep);
+        setPendingSimultaneous([]);
+  
 
 
-{/* ← 左下 Top に もどる */}
-<div
-  style={{
-    position: 'fixed',
-    bottom: '20px',
-    left: '20px',
-    zIndex: 1000
-  }}
->
-  <button
-    onClick={() => window.location.href = '/'}
-    style={{
-      padding: '10px 20px',
-      backgroundColor: '#ffffff',
-      color: '#000000',
-      border: '1px solid #000',
-      borderRadius: '20px',
-      fontWeight: 'bold',
-      cursor: 'pointer'
-    }}
-  >
-    Top に もどる
-  </button>
-</div>
+        if (nextStep >= rawAnswers.length) {
+          handleCorrect();
+        }
+      }
+    }
+  
+    // ⭐ 順番タップ
+    else {
+      const expected = rawAnswers[currentStep].trim();
+      if (clickedId === expected) {
+        const nextStep = currentStep + 1;
+        setCurrentStep(nextStep);
+  
+        if (nextStep >= rawAnswers.length) {
+          handleCorrect();
+        }
+      } else {
+        setTimeout(() => failOrReset(), 10);
+      }
+    }
+  };
+  
+  
+  
 
-{/* → 右下 もどる */}
-<div
-  style={{
-    position: 'fixed',
-    bottom: '20px',
-    right: '20px',
-    zIndex: 1000
-  }}
->
-  <button
-    onClick={() => window.history.back()}
-    style={{
-      padding: '10px 20px',
-      backgroundColor: '#ffffff',
-      color: '#000000',
-      border: '1px solid #000',
-      borderRadius: '20px',
-      fontWeight: 'bold',
-      cursor: 'pointer'
-    }}
-  >
-    もどる
-  </button>
-</div>
+  if (loading || !currentProblem) {
+    return <div style={{ color: 'white', textAlign: 'center' }}>読み込み中...</div>;
+  }
 
-
+  return (
+    <div style={{ backgroundColor: '#0000cc', minHeight: '100vh', width: '100vw', fontFamily: 'sans-serif', margin: 0, padding: 0 }}>
+      <div style={{ paddingTop: '0px', paddingBottom: '120px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <h1 style={{ fontSize: '1.4rem', color: '#ffffff', margin: '0', fontWeight: 'bold' }}>{title}</h1>
+        <div style={{ color: 'white', fontSize: '1rem', marginBottom: '5px' }}>
+          {!isFinished ? `あと ${problems.length - currentIndex} 問` : 'ぜんぶできた！おめでとう！🎉'}
         </div>
+        <h2 style={{ fontSize: '1.2rem', color: '#ffff33',  margin: '0 0 5px 0' }}>{currentProblem.text1}</h2>
+
+        <div style={sorobanWrapperStyle}>
+          <SorobanUI
+            title={title}
+            problems={problems}
+            currentIndex={currentIndex}
+            currentProblem={currentProblem}
+            unit5On={unit5On}
+            tens5On={tens5On}
+            unit1Index={unit1Index}
+            tens1Index={tens1Index}
+            hideText={hideText}
+            isFinished={isFinished}
+            setUnit5On={setUnit5On}
+            setTens5On={setTens5On}
+            setUnit1Index={setUnit1Index}
+            setTens1Index={setTens1Index}
+            handleUnit1Click={setUnit1Index}
+            handleTens1Click={setTens1Index}
+            handleSpaceClick={handleSpaceClick}
+            resetAll={resetProblem}
+            tens100On={tens100On}
+            setTens100On={setTens100On}
+            unit100Index={unit100Index}
+            setUnit100Index={setUnit100Index}
+            
+          />
+        </div>
+
+        {!hideText && (
+         <>
+         <h2
+           style={{
+             fontSize: '1rem',
+             margin: '0.5em 0 0.2em 0', // 上に1em、下に0.2em
+             color: '#ffffff',
+           }}
+         >
+           {currentProblem.text2}
+         </h2>
+         <h2
+           style={{
+             fontSize: '1rem',
+             margin: '0', // 上下とも余白なし（上のh2でコントロール済み）
+             color: '#dddddd',
+           }}
+         >
+           {currentProblem.text3}
+         </h2>
+       </>
+       
+        )}
+      </div>
+
+      <div style={{ position: 'fixed', bottom: '20px', right: '10px', zIndex: 1000 }}>
+        <button
+          onClick={() => window.history.back()}
+          style={{ padding: '10px 20px', backgroundColor: '#fff', borderRadius: '20px', fontWeight: 'bold' }}
+        >
+          もどる
+        </button>
+      </div>
+
+      <div style={{ position: 'fixed', bottom: '20px', left: '10px', zIndex: 1000 }}>
+        <button
+          onClick={() => navigate('/')}
+          style={{ padding: '10px 20px', backgroundColor: '#fff', borderRadius: '20px', fontWeight: 'bold' }}
+        >
+          トップ
+        </button>
       </div>
     </div>
   );
 }
 
 export default Practice;
-

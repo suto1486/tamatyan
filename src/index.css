@@ -15,8 +15,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background-color: #0000cc; /* ← 青で統一 */
+  background-color: #0000cc; /* ← 念のため背景色もここで統一 */
+  overflow-x: hidden;        /* 横スクロール防止にもなる */
   overflow: hidden;           /* ← スクロール防止 */
 }
 

@@ -1,0 +1,153 @@
+[
+  {
+    "id": "add100B-1",
+    "text1": "たす87は？",
+    "text2": "80をたしてひく3して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 15,
+    "answers": [
+      "space8",
+      "space14",
+      "space5",
+      "space2",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  },
+  {
+    "id": "add100B-2",
+    "text1": "たす78は？",
+    "text2": "70をたしてひく2して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 26,
+    "answers": [
+      "space8",
+      "space14",
+      "space7",
+      "space2",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  },
+  {
+    "id": "add100B-3",
+    "text1": "たす67は？",
+    "text2": "60をたしてひく3して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 37,
+    "answers": [
+      "space8",
+      "space14",
+      "space7",
+      "space2",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  },
+  {
+    "id": "add100B-4",
+    "text1": "たす56は？",
+    "text2": "50をたしてひく4して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 48,
+    "answers": [
+      "space8",
+      "space7",
+      "space2",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  },
+  {
+    "id": "add100B-5",
+    "text1": "たす48は？",
+    "text2": "40をたしてひく2して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 55,
+    "answers": [
+      "space14",
+      "space6",
+      "space2",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  },
+  {
+    "id": "add100B-6",
+    "text1": "たす27は？",
+    "text2": "20をたしてひく3して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 76,
+    "answers": [
+      "space14",
+      "space6",
+      "space2",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  },
+  {
+    "id": "add100B-7",
+    "text1": "たす38は？",
+    "text2": "30をたしてひく2して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 67,
+    "answers": [
+      "space14",
+      "space3",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  },
+  {
+    "id": "add100B-8",
+    "text1": "たす27は？",
+    "text2": "20をたしてひく3して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 78,
+    "answers": [
+      "space14",
+      "space3",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  },
+  {
+    "id": "add100B-9",
+    "text1": "たす14は？",
+    "text2": "10をたしてひく6して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 87,
+    "answers": [
+      "space14",
+      "space4",
+      "space2",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  },
+  {
+    "id": "add100B-10",
+    "text1": "たす53は？",
+    "text2": "50をたしてひく7して10をたす",
+    "text3": "10をたすは90をひいて100をたす",
+    "number": 48,
+    "answers": [
+      "space8",
+      "space4",
+      "space2",
+      "space10",
+      "space9",
+      "space18"
+    ]
+  }
+]

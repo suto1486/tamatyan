@@ -1,13 +1,13 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function Select() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const file = searchParams.get('file') || '';
   const title = decodeURIComponent(searchParams.get('title') || '');
-
-  // bodyスタイルも強制的に修正（背景やスクロール）
+  const [yuruyuru, setYuruyuru] = useState(true); // ← ゆるゆるモード状態
+  const isTashikata = title.includes('たしかた');
   useEffect(() => {
     document.body.style.margin = '0';
     document.body.style.overflow = 'hidden';
@@ -17,8 +17,11 @@ function Select() {
   const handleSelect = (mode: 'okeiko' | 'mondai') => {
     const targetTitle = `${title} ${mode === 'okeiko' ? 'おけいこ' : 'もんだい'}`;
     const hideText = mode === 'mondai' ? '1' : '0';
-    navigate(`/practice?file=${file}&title=${encodeURIComponent(targetTitle)}&hide=${hideText}`);
+    const yuru = yuruyuru ? '1' : '0'; // ← クエリに追加
+    navigate(`/practice?file=${file}&title=${encodeURIComponent(targetTitle)}&hide=${hideText}&yuru=${yuru}`);
   };
+
+  
 
   return (
     <div style={{
@@ -32,43 +35,46 @@ function Select() {
       justifyContent: 'center',
       gap: '20px',
       fontFamily: 'sans-serif'
+
     }}>
       <h1 style={{ color: '#ffffff', fontSize: '1.5rem' }}>{title}</h1>
+    
 
-      <button
-        onClick={() => handleSelect('okeiko')}
-        style={buttonStyle('#0000cc')}
-      >
-        おけいこ
-      </button>
-      <button
-        onClick={() => handleSelect('mondai')}
-        style={buttonStyle('#cc0000')}
-      >
-        もんだい
-      </button>
+      {/* ✅ きびしいチェックボックス（たしかた以外のときだけ表示） */}
+{!isTashikata && (
+  <label style={{ color: 'white', fontSize: '1rem' }}>
+  <input
+    type="checkbox"
+    checked={!yuruyuru} // ← 逆転（true = きびしい）
+    onChange={(e) => setYuruyuru(!e.target.checked)} // ← 逆転させる
+    style={{ marginRight: '0.5em' }}
+  />
+  きびしい!!
+</label>
 
-      <button
-        onClick={() => navigate('/')}
-        style={{
-          padding: '8px 16px',
-          fontSize: '1rem',
-          borderRadius: '20px',
-          border: '1px solid #000',
-          backgroundColor: '#ffffff',
-          color: '#000000',
-          fontWeight: 'bold',
-          cursor: 'pointer',
-          marginTop: '20px'
-        }}
-      >
+)}
+
+
+      <button onClick={() => handleSelect('okeiko')} style={buttonStyle('#0000cc')}>おけいこ</button>
+      <button onClick={() => handleSelect('mondai')} style={buttonStyle('#cc0000')}>もんだい</button>
+
+      <button onClick={() => navigate('/')} style={{
+        padding: '8px 16px',
+        fontSize: '1rem',
+        borderRadius: '20px',
+        border: '1px solid #000',
+        backgroundColor: '#ffffff',
+        color: '#000000',
+        fontWeight: 'bold',
+        cursor: 'pointer',
+        marginTop: '20px'
+      }}>
         もどる
       </button>
     </div>
   );
 }
 
-// ✅ ボタンの共通スタイル（色だけ切替）
 const buttonStyle = (textColor: string) => ({
   padding: '12px 24px',
   fontSize: '1.2rem',

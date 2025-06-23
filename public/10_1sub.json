@@ -2,121 +2,121 @@
   {
     "id": "10-1s-1",
     "text1": "ひく1は？",
-    "text2": "10をひいて9をたす",
+    "text2": "ひく1は10をひいて9をたす",
     "text3": "",
     "number": 10,
     "answers": [
       "space10",
-      "space1",
-      "space7"
+      "space1'",
+      "space7'"
     ]
   },
   {
     "id": "10-1s-2",
     "text1": "ひく2は？",
-    "text2": "10をひいて8をたす",
+    "text2": "ひく2は10をひいて8をたす",
     "text3": "",
     "number": 10,
     "answers": [
       "space10",
-      "space1",
-      "space6"
+      "space1'",
+      "space6'"
     ]
   },
   {
     "id": "10-1s-3",
     "text1": "ひく2は？",
-    "text2": "10をひいて8をたす",
+    "text2": "ひく2は10をひいて8をたす",
     "text3": "",
     "number": 11,
     "answers": [
       "space10",
-      "space1",
-      "space7"
+      "space1'",
+      "space7'"
     ]
   },
   {
     "id": "10-1s-4",
     "text1": "ひく3は？",
-    "text2": "10をひいて7をたす",
+    "text2": "ひく3は10をひいて7をたす",
     "text3": "",
     "number": 10,
     "answers": [
       "space10",
-      "space1",
-      "space5"
+      "space1'",
+      "space5'"
     ]
   },
   {
     "id": "10-1s-5",
     "text1": "ひく3は？",
-    "text2": "10をひいて7をたす",
+    "text2": "ひく3は10をひいて7をたす",
     "text3": "",
     "number": 11,
     "answers": [
       "space10",
-      "space1",
-      "space6"
+      "space1'",
+      "space6'"
     ]
   },
   {
     "id": "10-1s-6",
     "text1": "ひく3は？",
-    "text2": "10をひいて7をたす",
+    "text2": "ひく3は10をひいて7をたす",
     "text3": "",
     "number": 12,
     "answers": [
       "space10",
-      "space1",
-      "space7"
+      "space1'",
+      "space7'"
     ]
   },
   {
     "id": "10-1s-7",
     "text1": "ひく4は？",
-    "text2": "10をひいて6をたす",
+    "text2": "ひく4は10をひいて6をたす",
     "text3": "",
     "number": 10,
     "answers": [
       "space10",
-      "space1",
-      "space4"
+      "space1'",
+      "space4'"
     ]
   },
   {
     "id": "10-1s-8",
     "text1": "ひく4は？",
-    "text2": "10をひいて6をたす",
+    "text2": "ひく4は10をひいて6をたす",
     "text3": "",
     "number": 11,
     "answers": [
       "space10",
-      "space1",
-      "space5"
+      "space1'",
+      "space5'"
     ]
   },
   {
     "id": "10-1s-9",
     "text1": "ひく4は？",
-    "text2": "10をひいて6をたす",
+    "text2": "ひく4は10をひいて6をたす",
     "text3": "",
     "number": 12,
     "answers": [
       "space10",
-      "space1",
-      "space6"
+      "space1'",
+      "space6'"
     ]
   },
   {
     "id": "10-1s-10",
     "text1": "ひく4は？",
-    "text2": "10をひいて6をたす",
+    "text2": "ひく4は10をひいて6をたす",
     "text3": "",
     "number": 13,
     "answers": [
       "space10",
-      "space1",
-      "space7"
+      "space1'",
+      "space7'"
     ]
   }
 ]

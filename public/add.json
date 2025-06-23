@@ -1,0 +1,105 @@
+[
+  {
+    "id": "add-1",
+    "text1": "1は？",
+    "text2": "1はしたのたまが1こ",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space4"
+    ]
+  },
+  {
+    "id": "add-2",
+    "text1": "2は？",
+    "text2": "2はしたのたまが2こ",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space5"    
+    ]
+  },
+  {
+    "id": "add-3",
+    "text1": "3は？",
+    "text2": "3はしたのたまが3こ",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space6"    
+    ]
+  },
+    {
+      "id": "add-4",
+      "text1": "4は？",
+      "text2": "4はしたのたまが4こ",
+      "text3": "",
+      "number": 0,
+      "answers": [
+        "space7"    
+      ]
+
+
+    },
+
+  {
+    "id": "add-5",
+    "text1": "5は？",
+    "text2": "5はうえのたま",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space1"    
+    ]
+
+  },
+
+  {
+    "id": "add-6",
+    "text1": "6は？",
+    "text2": "6は5と1",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space1'",
+      "space4'"  
+    ]
+
+  },
+  {
+    "id": "add-7",
+    "text1": "7は？",
+    "text2": "7は5と2",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space1'",
+      "space5'"  
+    ]
+
+  },
+  {
+    "id": "add-8",
+    "text1": "8は？",
+    "text2": "8は5と3",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space1'",
+      "space6'"  
+    ]
+
+  },
+  {
+    "id": "add-9",
+    "text1": "9は？",
+    "text2": "9は5と4",
+    "text3": "",
+    "number": 0,
+    "answers": [
+      "space1'",
+      "space7'"  
+    ]
+
+  }
+]

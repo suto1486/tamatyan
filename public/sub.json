@@ -1,0 +1,96 @@
+[
+  {
+    "id": "sub-1",
+    "text1": "ひく1は？",
+    "text2": "ひく1は1こ",
+    "text3": "",
+    "number": 1,
+    "answers": [
+      "space3"
+    ]
+  },
+  {
+    "id": "sub-2",
+    "text1": "ひく2は？",
+    "text2": "ひく2は2こいっしょに",
+    "text3": "",
+    "number": 2,
+    "answers": [
+      "space3"    
+    ]
+  },
+  {
+    "id": "sub-3",
+    "text1": "ひく3は？",
+    "text2": "ひく3は3こいっしょに",
+    "text3": "",
+    "number": 3,
+    "answers": [
+      "space3"    
+    ]
+  },
+  {
+    "id": "sub-4",
+    "text1": "ひく4は？",
+    "text2": "ひく4は4こいっしょに",
+    "text3": "",
+    "number": 4,
+    "answers": [
+      "space3"    
+    ]
+  },
+  {
+    "id": "sub-5",
+    "text1": "ひく5は？",
+    "text2": "ひく5はうえのたま",
+    "text3": "",
+    "number": 5,
+    "answers": [
+      "space2"    
+    ]
+  },
+  {
+    "id": "sub-6",
+    "text1": "ひく6は？",
+    "text2": "ひく6は1と5",
+    "text3": "",
+    "number": 6,
+    "answers": [
+      "space3" ,   
+      "space2"
+    ]
+  },
+  {
+    "id": "sub-7",
+    "text1": "ひく7は？",
+    "text2": "ひく7は2と5",
+    "text3": "",
+    "number": 7,
+    "answers": [
+      "space3" ,   
+      "space2"
+    ]
+  },
+  {
+    "id": "sub-8",
+    "text1": "ひく8は？",
+    "text2": "ひく8は3と5",
+    "text3": "",
+    "number": 8,
+    "answers": [
+      "space3" ,   
+      "space2"
+    ]
+  },
+  {
+    "id": "sub-9",
+    "text1": "ひく9は？",
+    "text2": "ひく9は4と5",
+    "text3": "",
+    "number": 9,
+    "answers": [
+      "space3" ,   
+      "space2"
+    ]
+  }
+]
