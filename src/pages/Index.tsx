@@ -11,31 +11,31 @@ const Index = () => {
   }, []);
 
   const buttons = [
-    { label: 'たしかた', file: 'add.json', title: 'たしかた' },
-    { label: 'ひきかた', file: 'sub.json', title: 'ひきかた' },
-    { label: '5+', file: '5_add.json', title: '5+' },
-    { label: '5-', file: '5_sub.json', title: '5-' },
-    { label: '10(1〜4)+', file: '10_1add.json', title: '10(1〜4)+' },
-    { label: '10(1〜4)-', file: '10_1sub.json', title: '10(1〜4)-' },
-    { label: '1〜4+',file: '1_4add.json', title: '1〜4+' },
-    { label: '1〜4-', file: '1_4sub.json', title: '1〜4-' },
-    { label: '10(5~9)+', file: '10_5add.json', title: '10(5〜9)+' },
-    { label: '10(5~9)-', file: '10_5sub.json', title: '10(5〜9)-' },
-    { label: 'SP+', file: 'sp_add.json', title: 'SP+' },
-    { label: 'SP-', file: 'sp_sub.json', title: 'SP-' },
-    { label: 'チャレンジ1', file: 'cha_add.json', title: 'チャレンジ1' },
-    { label: 'チャレンジ2', file: 'cha_sub.json', title: 'チャレンジ2' }
+    { label: '①たしかた', file: 'add.json', title: 'たしかた' },
+    { label: '②ひきかた', file: 'sub.json', title: 'ひきかた' },
+    { label: '③5+', file: '5_add.json', title: '5+' },
+    { label: '④5-', file: '5_sub.json', title: '5-' },
+    { label: '⑤10(1〜4)+', file: '10_1add.json', title: '10(1〜4)+' },
+    { label: '⑥10(1〜4)-', file: '10_1sub.json', title: '10(1〜4)-' },
+    { label: '⑦1〜4+',file: '1_4add.json', title: '1〜4+' },
+    { label: '⑧1〜4-', file: '1_4sub.json', title: '1〜4-' },
+    { label: '⑨10(5~9)+', file: '10_5add.json', title: '10(5〜9)+' },
+    { label: '⑩10(5~9)-', file: '10_5sub.json', title: '10(5〜9)-' },
+    { label: '⑪SP+', file: 'sp_add.json', title: 'SP+' },
+    { label: '⑫SP-', file: 'sp_sub.json', title: 'SP-' },
+    { label: '⑬チャレンジ1', file: 'cha_add.json', title: 'チャレンジ1' },
+    { label: '⑭チャレンジ2', file: 'cha_sub.json', title: 'チャレンジ2' }
   ];
 
   const extraButtons = [
-    { label: '+50A', file: 'add_50A.json', title: '+50A' },
-    { label: '+50B', file: 'add_50B.json', title: '+50B' },
-    { label: '-50A', file: 'sub_50A.json', title: '-50A' },
-    { label: '-50B', file: 'sub_50B.json', title: '-50B' },
-    { label: '+100A', file: 'add_100A.json', title: '+100A' },
-    { label: '+100B', file: 'add_100B.json', title: '+100B' },
-    { label: '-100A', file: 'sub_100A.json', title: '-100A' },
-    { label: '-100B', file: 'sub_100B.json', title: '-100B' }
+    { label: '⑮+50A', file: 'add_50A.json', title: '+50A' },
+    { label: '⑯+50B', file: 'add_50B.json', title: '+50B' },
+    { label: '⑰-50A', file: 'sub_50A.json', title: '-50A' },
+    { label: '⑱-50B', file: 'sub_50B.json', title: '-50B' },
+    { label: '⑲+100A', file: 'add_100A.json', title: '+100A' },
+    { label: '⑳+100B', file: 'add_100B.json', title: '+100B' },
+    { label: '㉑-100A', file: 'sub_100A.json', title: '-100A' },
+    { label: '㉒-100B', file: 'sub_100B.json', title: '-100B' }
   ];
 
   const handleClick = (file: string, title: string) => {
@@ -79,6 +79,9 @@ const Index = () => {
             onClick={() => handleClick(file, title)}
             style={{
               padding: '8px',
+              textAlign: 'left',
+　　　　　　　　paddingLeft: '1em',
+
               fontSize: '0.85rem',
               borderRadius: '8px',
               border: '1px solid #ffffff',
@@ -86,6 +89,7 @@ const Index = () => {
               color: '#0000cc',
               fontWeight: 'bold',
               cursor: 'pointer',
+              
               width: '140px'
             }}
           >
@@ -103,6 +107,8 @@ const Index = () => {
             onClick={() => handleClick(file, title)}
             style={{
               padding: '8px',
+              textAlign: 'left',
+　　　　　　　　paddingLeft: '1em',
               fontSize: '0.85rem',
               borderRadius: '8px',
               border: '1px solid #ffffff',
