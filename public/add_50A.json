@@ -1,0 +1,137 @@
+[
+  {
+    "id": "add50A-1",
+    "text1": "たす34は？",
+    "text2": "30をたして6をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 18,
+    "answers": [
+      "space14",
+      "space5",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50A-2",
+    "text1": "たす29は？",
+    "text2": "20をたして1をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 21,
+    "answers": [
+      "space14",
+      "space3",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50A-3",
+    "text1": "たす18は？",
+    "text2": "10をたして2をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 32,
+    "answers": [
+      "space14",
+      "space3",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50A-4",
+    "text1": "たす33は？",
+    "text2": "30をたして7をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 19,
+    "answers": [
+      "space14",
+      "space5",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50A-5",
+    "text1": "たす27は？",
+    "text2": "20をたして3をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 28,
+    "answers": [
+      "space14",
+      "space3",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50A-6",
+    "text1": "たす13は？",
+    "text2": "10をたして7をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 39,
+    "answers": [
+      "space14",
+      "space5",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50A-7",
+    "text1": "たす32は？",
+    "text2": "30をたして8をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 19,
+    "answers": [
+      "space14",
+      "space4",
+      "space2",
+      "space8",
+      "space10"
+
+    ]
+  },
+  {
+    "id": "add50A-8",
+    "text1": "たす25は？",
+    "text2": "20をたして5をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 26,
+    "answers": [
+      "space14",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50A-9",
+    "text1": "たす16は？",
+    "text2": "10をたして4をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 39,
+    "answers": [
+      "space14",
+      "space3",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50A-10",
+    "text1": "たす28は？",
+    "text2": "20をたして2をひいて10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 23,
+    "answers": [
+      "space14",
+      "space4",
+      "space8",
+      "space10"
+    ]
+  }
+]

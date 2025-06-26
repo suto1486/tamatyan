@@ -1,0 +1,139 @@
+[
+  {
+    "id": "add50B-1",
+    "text1": "たす37は？",
+    "text2": "30をたしてひく3をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 15,
+    "answers": [
+      "space14",
+      "space5",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50B-2",
+    "text1": "たす28は？",
+    "text2": "20をたしてひく2をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 26,
+    "answers": [
+      "space14",
+      "space7",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50B-3",
+    "text1": "たす16は？",
+    "text2": "10をたしてひく4をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 37,
+    "answers": [
+      "space14",
+      "space6",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50B-4",
+    "text1": "たす36は？",
+    "text2": "30をたしてひく4をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 18,
+    "answers": [
+      "space14",
+      "space7",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50B-5",
+    "text1": "たす27は？",
+    "text2": "20をたしてひく3をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 29,
+    "answers": [
+      "space14",
+      "space4",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50B-6",
+    "text1": "たす18は？",
+    "text2": "10をたしてひく2をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 35,
+    "answers": [
+      "space14",
+      "space6",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50B-7",
+    "text1": "たす37は？",
+    "text2": "30をたしてひく3をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 16,
+    "answers": [
+      "space14",
+      "space6",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50B-8",
+    "text1": "たす28は？",
+    "text2": "20をたしてひく2をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 27,
+    "answers": [
+      "space14",
+      "space3",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50B-9",
+    "text1": "たす19は？",
+    "text2": "10をたしてひく1をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 38,
+    "answers": [
+      "space14",
+      "space5",
+      "space8",
+      "space10"
+    ]
+  },
+  {
+    "id": "add50B-10",
+    "text1": "たす14は？",
+    "text2": "10をたしてひく6をして10をたす",
+    "text3": "10をたすは50をたして40をひく",
+    "number": 37,
+    "answers": [
+      "space14",
+      "space4",
+      "space2",
+      "space8",
+      "space10"
+    ]
+  }
+]

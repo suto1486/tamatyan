@@ -1,0 +1,151 @@
+[
+  {
+    "id": "sub100A-1",
+    "text1": "ひく17は？",
+    "text2": "10をひいて、10をひいて3をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 115,
+    "answers": [
+      "space10",
+      "space17",
+      "space8'",
+      "space14'",
+      "space6"
+    ]
+  },
+  {
+    "id": "sub100A-2",
+    "text1": "ひく28は？",
+    "text2": "20をひいて、10をひいて2をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 126,
+    "answers": [
+      "space10",
+      "space17",
+      "space8'",
+      "space14'",
+      "space6"
+    ]
+  },
+  {
+    "id": "sub100A-3",
+    "text1": "ひく39は？",
+    "text2": "30をひいて、10をひいて1をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 137,
+    "answers": [
+      "space10",
+      "space17",
+      "space8'",
+      "space14'",
+      "space6"
+    ]
+  },
+  {
+    "id": "sub100A-4",
+    "text1": "ひく45は？",
+    "text2": "40をひいて、10をひいて5をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 143,
+    "answers": [
+      "space10",
+      "space17",
+      "space8'",
+      "space14'",
+      "space1"
+    ]
+  },
+  {
+    "id": "sub100A-5",
+    "text1": "ひく64は？",
+    "text2": "60をひいて、10をひいて6をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 162,
+    "answers": [
+      "space10",
+      "space9",
+      "space17",
+      "space8'",
+      "space14'",
+      "space1'",
+      "space6'"
+    ]
+  },
+  {
+    "id": "sub100A-6",
+    "text1": "ひく73は？",
+    "text2": "70をひいて、10をひいて7をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 171,
+    "answers": [
+      "space10",
+      "space9",
+      "space17",
+      "space8'",
+      "space14'",
+      "space1'",
+      "space6'"
+    ]
+  },
+  {
+    "id": "sub100A-7",
+    "text1": "ひく81は？",
+    "text2": "80をひいて、10をひいて9をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 180,
+    "answers": [
+      "space10",
+      "space9",
+      "space17",
+      "space8'",
+      "space14'",
+      "space1'",
+      "space7'"
+    ]
+  },
+  {
+    "id": "sub100A-8",
+    "text1": "ひく92は？",
+    "text2": "90をひいて、10をひいて8をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 191,
+    "answers": [
+      "space10",
+      "space9",
+      "space17",
+      "space8'",
+      "space14'",
+      "space1'",
+      "space7'"
+    ]
+  },
+  {
+    "id": "sub100A-9",
+    "text1": "ひく46は？",
+    "text2": "40をひいて、10をひいて4をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 145,
+    "answers": [
+      "space10",
+      "space17",
+      "space8'",
+      "space14'",
+      "space7"
+    ]
+  },
+  {
+    "id": "sub100A-10",
+    "text1": "ひく34は？",
+    "text2": "30をひいて、10をひいて6をたす",
+    "text3": "10をひいては100をひいて90をたす",
+    "number": 132,
+    "answers": [
+      "space10",
+      "space17",
+      "space8'",
+      "space14'",
+      "space1'",
+      "space6'"
+    ]
+  }
+]

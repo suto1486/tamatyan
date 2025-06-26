@@ -1,0 +1,232 @@
+[
+    {
+      "id": "1_4s-1",
+      "text1": "ひく1は？",
+      "text2": "ひく1は4をたして5をひく",
+      "text3": "",
+      "number": 5,
+      "answers": [
+        "space7",
+        "space2"
+      ]
+    },
+    {
+      "id": "1_4s-2",
+      "text1": "ひく2は？",
+      "text2": "ひく2は3をたして5をひく",
+      "text3": "",
+      "number": 5,
+      "answers": [
+        "space6",
+        "space2"
+      ]
+    },
+    {
+      "id": "1_4s-3",
+      "text1": "ひく2は？",
+      "text2": "ひく2は3をたして5をひく",
+      "text3": "",
+      "number": 6,
+      "answers": [
+        "space7",
+        "space2"
+      ]
+    },
+    {
+      "id": "1_4s-4",
+      "text1": "ひく3は？",
+      "text2": "ひく3は2をたして5をひく",
+      "text3": "",
+      "number": 5,
+      "answers": [
+        "space5",
+        "space2"
+      ]
+    },
+    {
+      "id": "1_4s-5",
+      "text1": "ひく3は？",
+      "text2": "ひく3は2をたして5をひく",
+      "text3": "",
+      "number": 6,
+      "answers": [
+        "space6",
+        "space2"
+      ]
+    },
+    {
+      "id": "1_4s-6",
+      "text1": "ひく3は？",
+      "text2": "ひく3は2をたして5をひく",
+      "text3": "",
+      "number": 7,
+      "answers": [
+        "space7",
+        "space2"
+      ]
+    },
+    {
+      "id": "1_4s-7",
+      "text1": "ひく4は？",
+      "text2": "ひく4は1をたして5をひく",
+      "text3": "",
+      "number": 5,
+      "answers": [
+        "space4",
+        "space2"
+      ]
+    },
+    {
+      "id": "1_4s-8",
+      "text1": "ひく4は？",
+      "text2": "ひく4は1をたして5をひく",
+      "text3": "",
+      "number": 6,
+      "answers": [
+        "space5",
+        "space2"
+      ]
+    },
+    {
+      "id": "1_4s-9",
+      "text1": "ひく4は？",
+      "text2": "ひく4は1をたして5をひく",
+      "text3": "",
+      "number": 7,
+      "answers": [
+        "space6",
+        "space2"
+      ]
+    },
+    {
+      "id": "1_4s-10",
+      "text1": "ひく4は？",
+      "text2": "ひく4は1をたして5をひく",
+      "text3": "",
+      "number": 8,
+      "answers": [
+        "space7",
+        "space2"
+      ]
+    },
+    {
+        "id": "1_4s-21",
+        "text1": "ひく1は？",
+        "text2": "ひく1は10をひいて9をたす",
+        "text3": "",
+        "number": 10,
+        "answers": [
+          "space10",
+          "space1'",
+          "space7'"
+        ]
+      },
+      {
+        "id": "1_4s-12",
+        "text1": "ひく2は？",
+        "text2": "ひく2は10をひいて8をたす",
+        "text3": "",
+        "number": 10,
+        "answers": [
+          "space10",
+          "space1'",
+          "space6'"
+        ]
+      },
+      {
+        "id": "1_4s-13",
+        "text1": "ひく2は？",
+        "text2": "ひく2は10をひいて8をたす",
+        "text3": "",
+        "number": 11,
+        "answers": [
+          "space10",
+          "space1'",
+          "space7'"
+        ]
+      },
+      {
+        "id": "1_4s-14",
+        "text1": "ひく3は？",
+        "text2": "ひく3は10をひいて7をたす",
+        "text3": "",
+        "number": 10,
+        "answers": [
+          "space10",
+          "space1'",
+          "space5'"
+        ]
+      },
+      {
+        "id": "1_4s-15",
+        "text1": "ひく3は？",
+        "text2": "ひく3は10をひいて7をたす",
+        "text3": "",
+        "number": 11,
+        "answers": [
+          "space10",
+          "space1'",
+          "space6'"
+        ]
+      },
+      {
+        "id": "1_4s-16",
+        "text1": "ひく3は？",
+        "text2": "ひく3は10をひいて7をたす",
+        "text3": "",
+        "number": 12,
+        "answers": [
+          "space10",
+          "space1'",
+          "space7'"
+        ]
+      },
+      {
+        "id": "1_4s-17",
+        "text1": "ひく4は？",
+        "text2": "ひく4は10をひいて6をたす",
+        "text3": "",
+        "number": 10,
+        "answers": [
+          "space10",
+          "space1'",
+          "space4'"
+        ]
+      },
+      {
+        "id": "1_4s-18",
+        "text1": "ひく4は？",
+        "text2": "ひく4は10をひいて6をたす",
+        "text3": "",
+        "number": 11,
+        "answers": [
+          "space10",
+          "space1'",
+          "space5'"
+        ]
+      },
+      {
+        "id": "1_4s-19",
+        "text1": "ひく4は？",
+        "text2": "ひく4は10をひいて6をたす",
+        "text3": "",
+        "number": 12,
+        "answers": [
+          "space10",
+          "space1'",
+          "space6'"
+        ]
+      },
+      {
+        "id": "1_4s-20",
+        "text1": "ひく4は？",
+        "text2": "ひく4は10をひいて6をたす",
+        "text3": "",
+        "number": 13,
+        "answers": [
+          "space10",
+          "space1'",
+          "space7'"
+        ]
+      }
+    ]

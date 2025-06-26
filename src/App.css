@@ -4,9 +4,8 @@
 html, body, #root {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0000cc; /* ← 完全な青背景 */
+  background-color: #0000cc; /* ← 念のため背景色もここで統一 */
+  overflow-x: hidden;        /* 横スクロール防止にもなる */
   overflow: hidden;          /* ← スクロール禁止 */
 }
 
