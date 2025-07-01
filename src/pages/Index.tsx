@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signOut } from "firebase/auth";
+import { getAuth,signOut } from "firebase/auth";
 import { auth } from "../firebase"; // firebase.ts の位置に応じて調整
 
 const Index = () => {
@@ -48,13 +48,16 @@ const Index = () => {
     navigate(`/select?file=${file}&title=${encodeURIComponent(title)}`);
   };
 
-  const handleLogout = async () => {
-  try {
-    await signOut(auth);
-    window.location.href = "/login"; // ログインページに戻す
-  } catch (error) {
-    console.error("ログアウト失敗:", error);
-  }
+  const handleLogout = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        // ログアウト成功 → ログイン画面へ遷移
+        navigate('/login');
+      })
+      .catch((error) => {
+        console.error('ログアウトエラー:', error);
+      });
 };
 
 
